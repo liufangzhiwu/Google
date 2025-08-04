@@ -9,7 +9,7 @@ namespace GoogleMobileAds.Editor
 {
   public class EditorLocalization
   {
-    private const string LOCALIZATION_DATA_JSON_RELATIVE_PATH = "GoogleMobileAds/Editor";
+    private const string LOCALIZATION_DATA_JSON_RELATIVE_PATH = "GoogleExt/GoogleMobileAds/Editor";
     private const string LOCALIZATION_DATA_JSON_FILENAME =
       "gma_settings_editor_localization_data.json";
     private const string LOCALIZATIONS_JSON_KEY = "LocalizationsByKey";

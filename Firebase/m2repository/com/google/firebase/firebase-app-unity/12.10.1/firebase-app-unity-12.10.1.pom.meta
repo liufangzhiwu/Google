@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 54b36b8e06cc7a742a33319f8ff0daa3
+guid: 67ecd5ce72a1408884e3bb3d57359794
+labels:
+- gvh
+- gvh_version-12.10.1
+- gvhp_exportpath-Firebase/m2repository/com/google/firebase/firebase-app-unity/12.10.1/firebase-app-unity-12.10.1.pom
+timeCreated: 1480838400
 DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

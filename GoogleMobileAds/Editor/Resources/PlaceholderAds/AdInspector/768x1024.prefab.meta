@@ -1,7 +1,12 @@
 fileFormatVersion: 2
-guid: 4ec66b9840f55054e9e9d4c7dc0101b0
+guid: d09dfea4c722a4e239e771200d3639cc
+labels:
+- gvh
+- gvh_version-10.2.0
+- gvhp_exportpath-GoogleMobileAds/Editor/Resources/PlaceholderAds/AdInspector/768x1024.prefab
+timeCreated: 1480838400
 PrefabImporter:
   externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

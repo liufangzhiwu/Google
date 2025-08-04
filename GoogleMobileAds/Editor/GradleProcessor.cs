@@ -6,16 +6,15 @@ using GoogleMobileAds.Editor;
 
 public class GradleProcessor : IPostGenerateGradleAndroidProject
 {
-    public int callbackOrder { get { return 0; } }
+    public int callbackOrder => 0;
 
-    private const string GMA_PACKAGING_OPTIONS_LAUNCHER =
-      "apply from: '../unityLibrary/GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'";
+    private const string LibraryPath = "tuanjieLibrary";//unityLibrary
+    
+    private const string GMA_PACKAGING_OPTIONS_LAUNCHER = "apply from: '../tuanjieLibrary/GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'";
 
-    private const string GMA_PACKAGING_OPTIONS =
-      "apply from: 'GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'";
+    private const string GMA_PACKAGING_OPTIONS = "apply from: 'GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'";
 
-    private const string GMA_VALIDATE_GRADLE_DEPENDENCIES =
-      "gradle.projectsEvaluated { apply from: 'GoogleMobileAdsPlugin.androidlib/validate_dependencies.gradle' }";
+    private const string GMA_VALIDATE_GRADLE_DEPENDENCIES = "gradle.projectsEvaluated { apply from: 'GoogleMobileAdsPlugin.androidlib/validate_dependencies.gradle' }";
 
     public void OnPostGenerateGradleAndroidProject(string path)
     {
@@ -36,9 +35,9 @@ public class GradleProcessor : IPostGenerateGradleAndroidProject
 
         foreach (var gradlepath in gradleList)
         {
-            if (!gradlepath.Contains("unityLibrary/build.gradle") &&
+            if (!gradlepath.Contains("tuanjieLibrary/build.gradle") &&
                 !gradlepath.Contains("launcher/build.gradle") &&
-                !gradlepath.Contains("unityLibrary\\build.gradle") &&
+                !gradlepath.Contains("tuanjieLibrary\\build.gradle") &&
                 !gradlepath.Contains("launcher\\build.gradle"))
             {
                 continue;
@@ -57,7 +56,7 @@ public class GradleProcessor : IPostGenerateGradleAndroidProject
                 continue;
             }
 
-            if (gradlepath.Contains("unityLibrary/build.gradle") || gradlepath.Contains("unityLibrary\\build.gradle"))
+            if (gradlepath.Contains("tuanjieLibrary/build.gradle") || gradlepath.Contains("tuanjieLibrary\\build.gradle"))
             {
                 contents += Environment.NewLine + packagingOptionsUnityLibrary;
             }
@@ -69,7 +68,7 @@ public class GradleProcessor : IPostGenerateGradleAndroidProject
         }
 
         // TODO (b/311555203) Use delete then write approach above to update this Gradle script too.
-        var unityLibraryGradle = Directory.GetFiles(rootPath, "unityLibrary/build.gradle",
+        var unityLibraryGradle = Directory.GetFiles(rootPath, "tuanjieLibrary/build.gradle",
                     SearchOption.TopDirectoryOnly);
 
         foreach (var gradlePath in unityLibraryGradle)
