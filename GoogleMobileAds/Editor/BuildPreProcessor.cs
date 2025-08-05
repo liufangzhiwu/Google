@@ -25,9 +25,11 @@ public class BuildPreProcessor : IPreprocessBuild
     public void OnPreprocessBuild(BuildTarget target, string path)
 #endif
     {
-        if (!AssetDatabase.IsValidFolder("Assets/GoogleMobileAds"))
+        //miro modify
+        // if (!AssetDatabase.IsValidFolder("Assets/GoogleMobileAds"))
+        if (!AssetDatabase.IsValidFolder("Assets/GeneratedLocalRepo"))
         {
-            AssetDatabase.CreateFolder("Assets", "GoogleMobileAds");
+            AssetDatabase.CreateFolder("Assets", "GeneratedLocalRepo");
         }
 
         /*
@@ -43,7 +45,7 @@ public class BuildPreProcessor : IPreprocessBuild
              * Copy link.xml to Assets/GoogleMobileAds to ensure all platform dependent libraries
              * are included in the build.
              */
-            AssetDatabase.CopyAsset(linkXmlPath, "Assets/GoogleMobileAds/link.xml");
+            AssetDatabase.CopyAsset(linkXmlPath, "Assets/GeneratedLocalRepo/link.xml");
         }
     }
 }
